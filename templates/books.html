@@ -1,17 +1,29 @@
-<!DOCTYPE html>
-<html>
-    <head>
+{% extends 'base.html' %}
+{% block content %}
+
+    {% for book in books %}
+        {{book.title}}
+        {{book.author}}
+        {{book.description}}
+        {{book.published}}
+        {{book.related_works}}
+        {{book.rating}}
+        {{book.review}}
+    {% endfor %}
         
-    </head>
-    <body>
-        {% for book in books %}
-            {{book.title}}
-            {{book.author}}
-            {{book.description}}
-            {{book.published}}
-            {{book.related_works}}
-            {{book.rating}}
-            {{book.review}}
-        {% endfor %}
-    </body>
-</html>
+    <ul class="collapsible" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+    </ul>
+
+{% endblock %}

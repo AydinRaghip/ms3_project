@@ -4,7 +4,6 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
 app = Flask(__name__)
-
 app.config["MONGODB_NAME"] = 'book_review_site'
 app.config["MONGO_URI"] = os.environ['MONGO_URI']
 
